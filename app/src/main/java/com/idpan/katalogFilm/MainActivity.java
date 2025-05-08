@@ -12,5 +12,5 @@ public class MainActivity extends AppCompatActivity {
         TextView text = new TextView(this);
         text.setText("Halo, IDPAN ASHARI - Ini Katalog Film!");
         setContentView(text);
-    }
+        }
 }
