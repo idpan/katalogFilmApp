@@ -1,7 +1,15 @@
 workflows:
-  sample-workflow:
-    name: Codemagic Sample Workflow
+  android-workflow:
+    name: Android Build Workflow
+    max_build_duration: 60
+    instance_type: linux_x2
 
-    max_build_duration: 120
+    environment:
+      java: 17
 
-    instance_type: mac_mini_m2
+    scripts:
+      - name: Build APK
+        script: ./gradlew assembleRelease
+
+    artifacts:
+      - app/build/outputs/apk/release/app-release.apk
